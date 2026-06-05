@@ -1,0 +1,7 @@
+appName: cart
+cfg_data:
+  CATALOGUE_HOST: "catalogue"
+  CATALOGUE_PORT: "8080"
+  REDIS_HOST: "172.31.5.79"
+schema:
+  enabled: false

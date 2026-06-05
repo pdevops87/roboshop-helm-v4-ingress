@@ -1,0 +1,11 @@
+appName: payment
+schema:
+  enabled: false
+cfg_data:
+  CART_HOST: "cart"
+  CART_PORT: "8080"
+  USER_HOST: "user"
+  USER_PORT: "8080"
+  AMQP_HOST: "172.31.7.121"
+  AMQP_USER: "roboshop"
+  AMQP_PASS: "roboshop123"

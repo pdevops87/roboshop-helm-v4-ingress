@@ -1,0 +1,16 @@
+appName: catalogue
+cfg_data:
+  MONGO: "true"
+  MONGO_URL: "mongodb://172.31.0.168:27017/catalogue"
+  DB_TYPE: "mongo"
+  APP_GIT_URL: "https://github.com/roboshop-devops-project-v3/catalogue"
+  DB_HOST: "172.31.0.168"
+  SCHEMA_FILE: "db/master-data.js"
+schema:
+  enabled: true
+job:
+  containers:
+    - name: app-user
+      file_name: db/master-data.js
+
+

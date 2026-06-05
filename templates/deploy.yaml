@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  labels:
+    appName: {{ .Values.appName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appName: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        appName: {{ .Values.appName }}
+    spec:
+      containers:
+    {{ if eq .Values.appName "frontend" }}
+      - name: nginx-exporter
+        image: nginx/nginx-prometheus-exporter:latest
+        args: [ "-nginx.scrape-uri=http://127.0.0" ] #  Scrapes local Nginx
+        ports:
+            - containerPort: 9113
+    {{ end }}
+      - name: {{ .Values.appName }}
+        image: public.ecr.aws/u4j6q5s8/{{ .Values.appName }}:v1
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: {{ .Values.appName }}
+        env:
+          - name: INSTANA_ENABLED
+            value: "false"
+
+# based on image version only imagePullPolicy will change
+
+# if an imagePullPolicy:latest this is for image:latest(default Policy)
+# image:v1 then internally imagePullPolicy:IfNotPresent(default Policy)
+#Note: ImagePullPolicy:Always will pull the image latest one every time but performance wise it will low.
+
+
+
