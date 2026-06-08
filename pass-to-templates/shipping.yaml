@@ -1,7 +1,7 @@
 appName: shipping
 cfg_data:
   CART_ENDPOINT: "cart:8080"
-  DB_HOST: "172.31.9.185"
+  DB_HOST: "172.31.34.43"
   DB_TYPE:  "mysql"
   APP_GIT_URL: "https://github.com/roboshop-devops-project-v3/shipping"
   DB_USER: "root"
