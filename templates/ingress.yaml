@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-ingress
+  name: nginx-ingress-frontend
 spec:
   rules:
     - host: "frontend-dev.pdevops78.online"
@@ -23,7 +23,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-ingress
+  name: nginx-ingress-prometheus
 spec:
   rules:
     - host: "prometheus-dev.pdevops78.online"
