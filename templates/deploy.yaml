@@ -23,7 +23,7 @@ spec:
             - containerPort: 9113
     {{ end }}
       - name: {{ .Values.appName }}
-        image: public.ecr.aws/u4j6q5s8/{{ .Values.appName }}:v1
+        image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}:v1
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
