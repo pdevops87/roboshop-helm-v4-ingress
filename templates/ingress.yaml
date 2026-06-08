@@ -1,38 +1,23 @@
 #pass ingress rules
+{{ if .Values.ingress.enabled | default false }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-ingress-frontend
+  name: {{ .Values.ingress.name }}
 spec:
   rules:
-    - host: "frontend-dev.pdevops78.online"
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
-                name: frontend
+                name: {{ .Values.appName }}
                 port:
-                  number: 80
+                  number: {{ .Values.port }}
+
+{{ end }}
 
 
 
----
-# for prometheus
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nginx-ingress-prometheus
-spec:
-  rules:
-    - host: "prometheus-dev.pdevops78.online"
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: prometheus-kube-prometheus-prometheus
-                port:
-                  number: 9090

@@ -13,3 +13,7 @@ cfg_data:
   SHIPPING_PORT: "8080"
   PAYMENT_HOST: "payment"
   PAYMENT_PORT: "8080"
+ingress:
+  enabled: true
+  hosts: frontend-dev.pdevops78.online
+  name: frontend-ingress
