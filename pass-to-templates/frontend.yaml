@@ -15,5 +15,5 @@ cfg_data:
   PAYMENT_PORT: "8080"
 ingress:
   enabled: true
-  hosts: frontend-dev.pdevops78.online
+  host: frontend-dev.pdevops78.online
   name: frontend-ingress
