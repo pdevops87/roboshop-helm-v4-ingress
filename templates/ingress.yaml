@@ -1,5 +1,5 @@
 #pass ingress rules
-{{ if .Values.ingress.enabled | default false }}
+ {{ if .Values.ingress.enabled | default false }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
