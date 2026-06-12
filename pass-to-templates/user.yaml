@@ -3,5 +3,5 @@ schema:
   enabled: false
 cfg_data:
   MONGO: "catalogue"
-  MONGO_URL: "mongodb://172.31.44.181:27017/users"
-  REDIS_URL: "redis://172.31.34.137:6379"
+  MONGO_URL: "mongodb://mongodb-dev.pdevops87.online:27017/users"
+  REDIS_URL: "redis://redis-dev.pdevops87.online:6379"
